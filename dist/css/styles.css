@@ -312,7 +312,7 @@ template {
 }
 
 body {
-  background-color: #cccccc;
+  background-color: transparent;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   display: -webkit-box;
