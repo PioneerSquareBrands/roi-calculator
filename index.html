@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROI Calculator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/styles.css">
+</head>
+
+<body>
+  <div class="calculator-container">
+    <div class="user-input">
+      <form class="form-inputs">
+        <!-- Device -->
+        <div class="input" data-name="device">
+          <label for="Units">Your device</label>
+          <select id="priceDropdown" required>
+            <option value="499" data-device="iPad10thGen"   data-hightrade="175" data-lowtrade="35" default>iPad 10thGen</option>
+            <option value="329" data-device="iPad789thGen"  data-hightrade="175" data-lowtrade="35">iPad 9th Gen</option>
+            <option value="329" data-device="iPad789thGen"  data-hightrade="175" data-lowtrade="35">iPad 8th Gen</option>
+            <option value="329" data-device="iPad789thGen"  data-hightrade="175" data-lowtrade="35">iPad 7th Gen</option>
+            <option value="499" data-device="iPadMini6"     data-hightrade="260" data-lowtrade="35">iPad Mini 6</option>
+            <option value="599" data-device="iPadAirPro"    data-hightrade="320" data-lowtrade="35">iPad Air 5th Gen</option>
+            <option value="799" data-device="iPadAirPro"    data-hightrade="490" data-lowtrade="35">iPad Pro 4th Gen</option>
+            <option value="999" data-device="macBookAirM1"  data-hightrade="460" data-lowtrade="30">MacBook Air M1</option>
+            <option value="1099" data-device="macBookAirM2" data-hightrade="460" data-lowtrade="30">MacBook Air M2</option>
+          </select>
+        </div>
+        <!-- Units -->
+        <div class="input" data-name="amount">
+          <label for="amount">How many units do you have?</label>
+          <div class="amount">
+            <span class="amount-value value">1000</span>
+            <span class="amount-unit unit">units</span>
+          </div>
+          <input type="range" id="amount" name="amount" min="0" max="10000" step="100" value="1000">
+          <div class="range-min-max units-min-max">
+            <span>0 units</span>
+            <span>10,000 units</span>
+          </div>
+        </div>
+        <!-- Brenthaven Case -->
+        <div class="input" data-name="bh-case">
+          <label for="Units">Protect it with</label>
+          <span class="bh-case-name">Edge Folio iPad 10th Gen (2281)</span>
+          <div class="radio-container">
+            <!--10th Gen-->
+            <fieldset class="radio-group" data-device="iPad10thGen">
+              <input type="radio" name="brenthaven-case" data-sku="2281" id="bh_2281" class="radio-option" value="59.95"
+                data-device="iPad10thGen" data-name="Edge Folio for iPad 10th Gen" data-sku="2281">
+              <label for="bh_2281" class="radio-label" data-tooltip-location="bottom" data-tooltip="Edge Folio for iPad 10th Gen">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2022/08/1_Edge-Folio-Front-hero-150x150.png"
+                  alt="Edge Folio for iPad 10th Gen">
+              </label>
+
+              <input type="radio" name="brenthaven-case" data-sku="2350" id="bh_2350" class="radio-option" value="49.95"
+                data-device="iPad10thGen" data-name="Bounce for iPad 10th Gen" data-sku="2350">
+              <label for="bh_2350" class="radio-label" data-tooltip-location="bottom" data-tooltip="Bounce for iPad 10th Gen">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2022/11/1_Bounce-10th-Gen_Front-Hero-150x150.png"
+                  alt="Bounce for iPad 10th Gen">
+              </label>
+
+              <input type="radio" name="brenthaven-case" data-sku="2906" id="bh_2906" class="radio-option" value="59.95"
+                data-device="iPad10thGen" data-name="360 for iPad 10th Gen" data-sku="2906">
+              <label for="bh_2906" class="radio-label" data-tooltip-location="bottom" data-tooltip="360 iPad for 10th Gen">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2022/08/1_360-Front-Hero-150x150.png"
+                  alt="360 iPad for 10th Gen">
+              </label>
+
+              <input type="radio" name="brenthaven-case" data-sku="6705" id="bh_6705" class="radio-option" value="74.95"
+                data-device="iPad10thGen" data-name="360+ for iPad 10th Gen" data-sku="6705">
+              <label for="bh_6705" class="radio-label" data-tooltip-location="bottom" data-tooltip="360+ for iPad 10th Gen">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2022/12/1_360-Kickstandfront-hero-150x150.png"
+                  alt="360+ for iPad 10th Gen">
+              </label>
+            </fieldset>
+
+            <!--9th/8th/7th Gen-->
+            <fieldset class="radio-group" data-device="iPad789thGen" style="display: none">
+              <input type="radio" name="brenthaven-case" data-sku="2880" id="bh_2880" class="radio-option" value="49.95"
+                data-device="iPad789thGen" data-name="Bounce iPad for 9th, 8th, 7th Gen" data-sku="2880">
+              <label for="bh_2880" class="radio-label" data-tooltip-location="bottom" data-tooltip="Bounce iPad for 9th, 8th, 7th Gen">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2022/02/1_EBounce10.2-Front-Hero-150x150.png"
+                  alt="Bounce iPad for 9th, 8th, 7th Gen">
+              </label>
+
+              <input type="radio" name="brenthaven-case" data-sku="2902" id="bh_2902" class="radio-option" value="59.95"
+                data-device="iPad789thGen" data-name="Edge Folio for iPad 9th, 8th, 7th Gen" data-sku="2902">
+              <label for="bh_2902" class="radio-label" data-tooltip-location="bottom" data-tooltip="Edge Folio for iPad 9th, 8th, 7th Gen">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2022/02/Edge-Folio_FrontHero_211104-150x150.png"
+                  alt="Edge Folio for iPad 9th, 8th, 7th Gen">
+              </label>
+
+              <input type="radio" name="brenthaven-case" data-sku="2890" id="bh_2890" class="radio-option" value="59.95"
+                data-device="iPad789thGen" data-name="Edge 360 for 9th, 8th, 7th Gen" data-sku="2890">
+              <label for="bh_2890" class="radio-label" data-tooltip-location="bottom" data-tooltip="Edge 360 for 9th, 8th, 7th Gen">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2022/02/1_E36010.2_Hero_Gray-150x150.png"
+                  alt="Edge 360 for 9th, 8th, 7th Gen">
+              </label>
+
+              <input type="radio" name="brenthaven-case" data-sku="2896" id="bh_2896" class="radio-option" value="79.95"
+                data-device="iPad789thGen" data-name="Edge 360 Carry for iPad 9th, 8th, 7th Gen" data-sku="2896">
+              <label for="bh_2896" class="radio-label" data-tooltip-location="bottom" data-tooltip="Edge 360 Carry for iPad 9th, 8th, 7th Gen">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2022/02/1_Hero-150x150.png"
+                  alt="Edge 360 Carry for iPad 9th, 8th, 7th Gen">
+              </label>
+            </fieldset>
+
+            <!--Mini 6-->
+            <fieldset class="radio-group" data-device="iPadMini6" style="display: none">
+              <input type="radio" name="brenthaven-case" data-sku="2869" id="bh_2869" class="radio-option" value="39.95"
+                data-device="iPadMini6" data-name="Bounce Case for iPad Mini 6" data-sku="2869">
+              <label for="bh_2869" class="radio-label" data-tooltip-location="bottom" data-tooltip="Bounce Case for iPad Mini 6">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2021/09/BounceMini6_FrontHero_220208-150x150.png"
+                  alt="Bounce Case for iPad Mini 6">
+              </label>
+
+              <input type="radio" name="brenthaven-case" data-sku="6044" id="bh_6044" class="radio-option" value="79.95"
+                data-device="iPadMini6" data-name="Protect+ for iPad mini 6" data-sku="6044">
+              <label for="bh_6044" class="radio-label" data-tooltip-location="bottom" data-tooltip="Protect+ for iPad mini 6">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2022/09/Protect-Mini_fronthero-150x150.png"
+                  alt="Protect+ for iPad mini 6">
+              </label>
+            </fieldset>
+
+            <!--Macbook Air M1-->
+            <fieldset class="radio-group" data-device="macBookAirM1" style="display: none">
+              <input type="radio" name="brenthaven-case" data-sku="2913" id="bh_2913" class="radio-option" value="69.95"
+                data-device="macBookAirM1" data-name="360 for MacBook Air M1" data-sku="2913">
+              <label for="bh_2913" class="radio-label" data-tooltip-location="bottom" data-tooltip="360 for MacBook Air M1">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2021/09/1_EdgeIII_MBA_BH-150x150.png"
+                  alt="360 for MacBook Air M1">
+              </label>
+            </fieldset>
+
+            <!--Macbook Air M2-->
+            <fieldset class="radio-group" data-device="macBookAirM2" style="display: none">
+              <input type="radio" name="brenthaven-case" data-sku="3042" id="bh_3042" class="radio-option" value="69.95"
+                data-device="macBookAirM2" data-name="360 for MacBook Air M2" data-sku="3042">
+              <label for="bh_3042" class="radio-label" data-tooltip-location="bottom" data-tooltip="360 for MacBook Air M2">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2022/06/1_Edge-MBA-M2_BackHero-150x150.png"
+                  alt="360 for MacBook Air M2">
+              </label>
+            </fieldset>
+
+            <!--iPad Air/Pro-->
+            <fieldset class="radio-group" data-device="iPadAirPro" style="display: none">
+              <input type="radio" name="brenthaven-case" data-sku="6038" id="bh_6038" class="radio-option" value="89.95"
+                data-device="iPadAirPro" data-name="Protect+ for iPad Air/Pro" data-sku="6038">
+              <label for="bh_6038" class="radio-label" data-tooltip-location="bottom" data-tooltip="Protect+ for iPad Air/Pro">
+                <img width="60" height="60" src="https://brenthaven.com/wp-content/uploads/2022/09/Edge-Rugged-Air_fronthero-150x150.pngg"
+                  alt="Protect+ for iPad Air/Pro">
+              </label>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- Repair Input -->
+        <div class="repair-input">
+          <!--Break Rate-->
+          <div class="input fake-input" data-name="break-rate">
+            <label for="break-rate">
+              Est. Broken Units 
+              <span class="tooltip" data-tooltip="Avg. Break Rate at 10-20% &#xa; Break rate related to broken screen, external damage caused by drop or tough usage">?</span>
+            </label> 
+            <input type="number" id="break-rate" name="break-rate" value="100" min="1" max="10000" />
+            <div class="fake-input__container">
+              <span class="fake-input__value">100</span>
+              <span class="unit">units</span>
+            </div>
+          </div>
+          <!--Repair Cost-->
+          <div class="input fake-input fake-input--prefix" data-name="fix-cost">
+            <label for="fix-cost">
+              Repair Cost
+              <span class="tooltip" data-tooltip="Screen/External Cost to Fix w/AppleCare+">?</span>
+            </label>
+            <input type="number" id="fix-cost" name="fix-cost" value="99" min="1" max="200" />
+            <div class="fake-input__container">
+              <span class="unit">$</span>
+              <span class="fake-input__value">99</span>
+            </div>
+          </div>
+          <!--IT Wage-->
+          <div class="input fake-input fake-input--prefix" data-name="it-wage">
+            <label for="it-wage">
+              IT Hourly Wage
+              <span class="tooltip" data-tooltip="Ticketing, fix, replacement, etc.">?</span>
+            </label>
+            <input type="number" id="it-wage" name="it-wage" value="75" min="1" max="200" />
+            <div class="fake-input__container">
+              <span class="unit">$</span>
+              <span class="fake-input__value">75</span>
+            </div>
+          </div>
+          <!--Time to fix-->
+          <div class="input fake-input" data-name="time-to-fix">
+            <label for="time-to-fix">Time To fix</label>
+            <input type="number" id="time-to-fix" name="time-to-fix" value="3" min="1" max="5" />
+            <div class="fake-input__container">
+              <span class="fake-input__value">3</span>
+              <span class="unit">hrs</span>
+            </div>
+          </div>
+        </div>
+      </form>
+      <button class="calculate">Calculate Savings</button>
+    </div>
+    <div class="results">
+      <div class="results-container">
+        <h2>Your Return on Investments</h2>
+        <div class="results-total">
+          <span class="results-total__currency">$</span>
+          <span class="results-total__value">100,000</span>
+        </div>
+        
+        <div class="results-comparison">
+          <div class="with-brenthaven">
+            <h3>With Brenthaven</h3>
+            <div>
+              <h4>Total Cost of Cases</h4>
+              <span class="results-comparison__case-total">$0</span>
+            </div>
+
+            <div>
+              <h4>No Potential Time Lost</h4>
+              <span>Using protective cases prevents downtime.</span>
+            </div>
+
+            <div>
+              <h4>
+                Est. Trade-in value
+                <span class="tooltip" data-tooltip="Based on Apple.com's highest trade-in rate">?</span>
+              </h4>
+              <span class="results-comparison__high-tradein">$175,000</span>
+            </div>
+          </div>
+          <div class="without-brenthaven">
+            <h3>Without Brenthaven</h3>
+            <div>
+              <h4>
+                Total Cost of repair
+                <span class="tooltip" data-tooltip="Maybe comparing this to the Cost of Cases doesn't look good?">?</span>
+              </h4>
+              <span class="results-comparison__repair-total">$0</span>
+            </div>
+
+            <div class="test">
+              <h4>
+                Potential time lost
+                <span class="tooltip" data-tooltip="Just assuming this based on &#xa; (Time to Fix) x (Broken Units)">?</span>
+              </h4>
+              <span class="results-comparison__time-lost">300hrs</span>
+            </div>
+
+            <div class="results-comparison__low-tradein-container">
+              <h4>
+                Est. Trade-in value
+                <span class="tooltip" data-tooltip="Based on Apple.com's lowest trade-in rate">?</span>
+              </h4>
+              <span class="results-comparison__low-tradein">$35,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-copy">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, perferendis? Facilis.</p>
+          <a href="#">Request a quote now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/src/js/scripts.js"></script>
+</body>
+
+</html>
